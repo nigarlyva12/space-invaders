@@ -8,11 +8,11 @@ public class Player {
 	private Image playerImage;
 	private int x;
 	private int y;
+	private final int step = 10;
 	
 	public Player() {
 		this.x = 300;
-		this.y = 460;
-		
+		this.y = 380;
 		try {
 			playerImage = ImageIO.read(new File("player.png"));
 		} catch (IOException e) {
@@ -20,7 +20,15 @@ public class Player {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public void moveLeft() {
+		x=x-step;
+	}
+	
+	public void moveRight() {
+		x=x+step;
+	}
+	
 	public Image getPlayerImage() {
 		return playerImage;
 	}
@@ -44,6 +52,5 @@ public class Player {
 	public void setY(int y) {
 		this.y = y;
 	}
-	
 	
 }
