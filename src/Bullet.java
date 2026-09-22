@@ -9,6 +9,7 @@ public class Bullet {
 	private int y;
 	private Direction direction;
 	private Image bulletImage;
+	private final int steps = 5;
 	
 	Bullet(int x, int y, Direction direction) throws IOException{
 		this.x = x;
@@ -23,7 +24,9 @@ public class Bullet {
 	}
 	
 	public void move() {
-		
+		if(direction == Direction.UP) {
+			y = y - steps;
+		}
 	}
 
 	public int getX() {
@@ -48,6 +51,14 @@ public class Bullet {
 
 	public void setDirection(Direction direction) {
 		this.direction = direction;
+	}
+
+	public Image getBulletImage() {
+		return bulletImage;
+	}
+
+	public void setBulletImage(Image bulletImage) {
+		this.bulletImage = bulletImage;
 	}
 	
 	

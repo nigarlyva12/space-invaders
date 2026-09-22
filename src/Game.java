@@ -13,10 +13,12 @@ public class Game {
 	private Player player;
 	private JFrame frame;
 	private GamePanel panel;
-
+	private Bullet bullet;
+	
 	public Game() throws IOException {
 		player = new Player();
-		panel = new GamePanel(player);
+		bullet = new Bullet(330, 470, Direction.UP);
+		panel = new GamePanel(player, bullet);
 		frame = new JFrame("Space Invaders");
 		try {
 			frame.setIconImage(ImageIO.read(new File("imgs/logo.png")));
@@ -42,6 +44,8 @@ public class Game {
 				}
 				else if(e.getKeyCode() == KeyEvent.VK_RIGHT)
 					player.moveRight();
+				else if(e.getKeyCode() == KeyEvent.VK_SPACE) 
+					bullet.move();
 			}
 
 			@Override
