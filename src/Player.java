@@ -11,10 +11,10 @@ public class Player {
 	private final int step = 10;
 	
 	public Player() {
-		this.x = 300;
-		this.y = 380;
+		this.x = 330;
+		this.y = 475;
 		try {
-			playerImage = ImageIO.read(new File("player.png"));
+			playerImage = ImageIO.read(new File("imgs/player.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,6 +29,9 @@ public class Player {
 		x=x+step;
 	}
 	
+	public void shoot() {
+		
+	}
 	public Image getPlayerImage() {
 		return playerImage;
 	}

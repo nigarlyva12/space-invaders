@@ -17,7 +17,7 @@ public class GamePanel extends JPanel {
 	
 	public GamePanel(Player player) throws IOException {
 		this.player = player;
-		backgroundImage = ImageIO.read(new File("black.jpg"));
+		backgroundImage = ImageIO.read(new File("imgs/black.jpg"));
 	}
 	@Override
 	protected void paintComponent(Graphics g) {

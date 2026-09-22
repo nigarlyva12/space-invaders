@@ -19,13 +19,13 @@ public class Game {
 		panel = new GamePanel(player);
 		frame = new JFrame("Space Invaders");
 		try {
-			frame.setIconImage(ImageIO.read(new File("plane.png")));
+			frame.setIconImage(ImageIO.read(new File("imgs/logo.png")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		frame.add(panel);
-		frame.setSize(640, 480);
+		frame.setSize(720, 560);
 		frame.setVisible(true);
 		frame.setResizable(false);
 	}
