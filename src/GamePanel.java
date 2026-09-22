@@ -15,11 +15,13 @@ public class GamePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Player player;
 	private List<Bullet> bullets;
+	private List<SmallInvader> smallInvaders;
 	private Image backgroundImage;
 	
-	public GamePanel(Player player, List<Bullet> bullets) throws IOException {
+	public GamePanel(Player player, List<Bullet> bullets, List<SmallInvader> smallInvaders ) throws IOException {
 		this.player = player;
 		this.bullets = bullets;
+		this.smallInvaders = smallInvaders;
 		backgroundImage = ImageIO.read(new File("imgs/black.jpg"));
 	}
 	@Override
@@ -29,5 +31,9 @@ public class GamePanel extends JPanel {
 		g.drawImage(player.getPlayerImage(), player.getX(), player.getY(), 50, 50, null);
 		for (Bullet b : bullets) {
 		    g.drawImage(b.getBulletImage(), b.getX(), b.getY(), 20, 20, null);
-		}}
+		}
+		for (SmallInvader sv : smallInvaders) {
+		    g.drawImage(sv.getSmallInvaderImage(), sv.getX(), sv.getY(), 20, 20, null);
+		}
+	}
 }

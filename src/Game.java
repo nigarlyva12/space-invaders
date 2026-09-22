@@ -16,11 +16,12 @@ public class Game {
 	private JFrame frame;
 	private GamePanel panel;
 	private List<Bullet> bullets;
+	private List<SmallInvader> smallInvaders;
 	
 	public Game() throws IOException {
 		bullets = new ArrayList<>();
 		player = new Player();
-		panel = new GamePanel(player, bullets);
+		panel = new GamePanel(player, bullets, smallInvaders);
 		frame = new JFrame("Space Invaders");
 		try {
 			frame.setIconImage(ImageIO.read(new File("imgs/logo.png")));
