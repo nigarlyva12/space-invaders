@@ -14,7 +14,7 @@ public class Game {
 	private JFrame frame;
 	private GamePanel panel;
 
-	public Game() {
+	public Game() throws IOException {
 		player = new Player();
 		panel = new GamePanel(player);
 		frame = new JFrame("Space Invaders");
