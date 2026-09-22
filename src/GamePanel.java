@@ -2,6 +2,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -13,12 +14,12 @@ public class GamePanel extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Player player;
-	private Bullet bullet;
+	private List<Bullet> bullets;
 	private Image backgroundImage;
 	
-	public GamePanel(Player player, Bullet bullet) throws IOException {
+	public GamePanel(Player player, List<Bullet> bullets) throws IOException {
 		this.player = player;
-		this.bullet = bullet;
+		this.bullets = bullets;
 		backgroundImage = ImageIO.read(new File("imgs/black.jpg"));
 	}
 	@Override
@@ -26,6 +27,7 @@ public class GamePanel extends JPanel {
 		super.paintComponent(g);
 		g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), null);
 		g.drawImage(player.getPlayerImage(), player.getX(), player.getY(), 50, 50, null);
-		g.drawImage(bullet.getBulletImage(), bullet.getX(), bullet.getY(), 50, 50 , null);
-	}
+		for (Bullet b : bullets) {
+		    g.drawImage(b.getBulletImage(), b.getX(), b.getY(), 20, 20, null);
+		}}
 }
