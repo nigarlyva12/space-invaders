@@ -1,7 +1,7 @@
 
 public abstract class Enemy {
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
 	
 	Enemy(int x, int y){
 		this.x = x;

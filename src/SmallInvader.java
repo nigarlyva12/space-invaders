@@ -1,7 +1,6 @@
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 
 public class SmallInvader extends Enemy {
@@ -16,7 +15,16 @@ public class SmallInvader extends Enemy {
 			e.printStackTrace();
 		}
 	}
-
+	public boolean isOutOfBound() {
+		if(x>650) return true;
+		return false;
+	}
+	public void moveRight() {
+		x=x+15;
+	}
+	public void moveLeft() {
+		x=x-15;
+	}
 	public Image getSmallInvaderImage() {
 		return smallInvaderImage;
 	}

@@ -18,7 +18,7 @@ public class GamePanel extends JPanel {
 	private List<SmallInvader> smallInvaders;
 	private Image backgroundImage;
 	
-	public GamePanel(Player player, List<Bullet> bullets, List<SmallInvader> smallInvaders ) throws IOException {
+	public GamePanel(Player player, List<Bullet> bullets, List<SmallInvader> smallInvaders) throws IOException {
 		this.player = player;
 		this.bullets = bullets;
 		this.smallInvaders = smallInvaders;
@@ -32,8 +32,8 @@ public class GamePanel extends JPanel {
 		for (Bullet b : bullets) {
 		    g.drawImage(b.getBulletImage(), b.getX(), b.getY(), 20, 20, null);
 		}
-		for (SmallInvader sv : smallInvaders) {
-		    g.drawImage(sv.getSmallInvaderImage(), sv.getX(), sv.getY(), 20, 20, null);
+		for (SmallInvader si : smallInvaders) {
+		    g.drawImage(si.getSmallInvaderImage(), si.getX(), si.getY(), 50, 50, null);
 		}
 	}
 }
